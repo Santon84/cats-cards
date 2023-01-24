@@ -30,7 +30,7 @@
             "subtitle" : "Сказочное заморское яство",
             "taste" : "с фуа-гра",
             "weight" : "2 кг",
-            "available" : "true",
+            "available" : "false",
             "portion" : "40 порций",
             "bonus" : "2 мыши в подарок",
             "description": "Печень утки разварная с артишоками.",
