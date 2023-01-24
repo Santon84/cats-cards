@@ -12,8 +12,8 @@ const [isSelected, setIsSelected] = useState(false);
 const [isHovered, setIsHovered] = useState(false);
 const [isActive] = useState(JSON.parse(data.available));
 const [message, setMessage] = useState('');
-const underText = {link: `Чего сидишь? Порадуй котэ,  ${<span onClick={e => handleSelect(e.target.parentNode.parentNode.dataset.id)}>купи.</span>}`};
-const linkBuy = <span onClick={e => handleSelect(e.target.parentNode.parentNode.dataset.id)}>купи.</span>;
+const linkBuy = <>Чего сидишь? Порадуй котэ, <span onClick={e => handleSelect(e.target.parentNode.parentNode.dataset.id)}>купи.</span></>;
+const textDisabled = <>Печалька, {data.taste} закончился.</>;
 const cardClassNames = classnames('card__wrapper',
    {
     'selected' : isSelected,
@@ -79,7 +79,7 @@ function handleSelect() {
         <img style={isActive ? {} : {opacity: 0.5}} alt='cat' src={data.image}></img>
         </div>
         </div>
-        <p className='undercard-description'>{isSelected ? data.description : '' }</p>
+        <p className={isActive ? 'undercard-description ' : 'undercard-description disabled'}>{isSelected ? data.description : isActive ? linkBuy : textDisabled } </p>
         {showModal && message.length>0 && <Modal messageText={message}/>}
     </div>
 

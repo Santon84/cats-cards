@@ -71,6 +71,7 @@ h2 {
     &.hovered {
         --current-color : var(--hovered-color);
     }
+    
     &.selected {
         --current-color : var(--selected-color);
         //border: 4px solid #e81313;
@@ -180,14 +181,18 @@ h2 {
     .undercard-description {
         text-align: center;
         color: #FFF;
+        margin-top: 14px;
         font-size: 13px;
         span {
-            color: #22A7E9;
+            color: var(--current-color);
             border-bottom: 2px var(--current-color) dashed;
             cursor: pointer;
             &:hover {
                 border-bottom:none;  
             }
+        }
+        &.disabled {
+            color: #FFFF66;
         }
     }
 }
