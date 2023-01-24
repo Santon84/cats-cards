@@ -147,6 +147,8 @@ h2 {
     position: relative;
     height: 480px;
     width: 100%;
+    z-index: -3;
+    background-color: var(--card-bg-color);
     border: 4px solid var(--current-color);
     background-position: bottom;
     background-repeat: no-repeat;   
@@ -174,7 +176,7 @@ h2 {
     }
     &:after {
         clip-path: polygon(0 calc(var(--corner-size) ), calc(var(--corner-size)) 0, 100% 0, 100% 100%, 0 100%);
-        background-color: #FFF;
+        background-color: var(--card-bg-color);
         border-radius: 10px;
         z-index: -1;
     }
