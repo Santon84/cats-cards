@@ -110,6 +110,7 @@ h2 {
         }
     }
     &__text-wrapper {
+        z-index: -3;
         padding-left: 51px;
         padding-top: 21px;
         > * {
