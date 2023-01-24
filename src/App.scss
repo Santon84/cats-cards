@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.App {
+
+    @media screen and (max-width: 1280px) {
+        background-image: url('../public/images/Pattern@2x.png');
+    }
+    @media screen and (min-width: 1280px) {
+        background-image: url('../public/images/Pattern.png');
+    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh ;
+    
+    .cards {
+        max-width: 1280px;    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    
+    }
+    .main-header {
+        font-family: 'Exo 2', sans-serif;
+        text-transform: none;
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        color: #FFFFFF;
+        text-shadow: 0px 1px 1px #000000;
+        padding-top: 36px;
+        padding-bottom: 25px;
+    }
+}

@@ -1,0 +1,216 @@
+:root {
+    
+    --main-color: #1698D9;
+    --hovered-color: #2EA8E6;
+    --selected-color: #D91667;
+    --selected-hovered-color: #E52E7A;
+    --current-color: var(--main-color);
+    --border-size: 4px;
+    --corner-size: 40px;
+    --card-bg-color: #F2F2F2;
+}
+h2 {
+    text-transform: uppercase;
+}
+.box {
+    width: 370px;
+    height: 370px;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    clip-path: polygon(0 var(--corner-size), var(--corner-size) 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1000;
+    border-radius: 10px;
+    &:before, &:after {
+        content: '';
+        inset: 0;
+        position: absolute;
+    }
+    &:before {
+        background-color: #1698D9;
+        z-index: -2;
+    }
+    &:after {
+        clip-path: polygon(4px calc(var(--corner-size) + 2px), calc(var(--corner-size) + 2px) 4px, 100% 0, 100% 100%, 0 100%);
+        background-color: #FFF;
+        border-radius: 10px;
+        z-index: -1;
+    }
+    
+  }
+
+  .inner {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #1698D9;
+    border-radius: 10px;
+    //border: 4px solid #1698D9;
+    background: transparent;
+    
+    //z-index: -1;
+  }
+
+
+
+.card {
+    //background-color: var(--card-bg-color);
+
+    margin-right: 80px;
+    margin-bottom: 40px;
+    width: 320px;
+    
+
+
+    @media screen and (min-width:640px) and (max-width:780px) {
+        margin-right: 30px;
+        width: 300px;
+    }
+    @media screen and (max-width:640px) {
+        margin-right: 0;
+       
+    }
+    @media screen and (min-width:780px) and (max-width:960px) {
+        margin-right: 50px;
+        //width: 320px;
+    }
+    @media screen and (min-width:960px) and (max-width:1200px) {
+        margin-right: 80px;
+        margin-left: 80px;
+        //width: 320px;
+    }
+    &:nth-child(3) {
+        @media screen and (min-width: 1200px) {
+            margin-right: 0;
+        }
+    }
+    &:nth-child(2) {
+        @media screen and (min-width: 640px) and (max-width:960px) {
+            margin-right: 0;
+        }
+    }
+    &:last-child {
+       
+            margin-right: 0;
+            margin-left: 0;
+        
+    }
+    
+    .undercard-description {
+        text-align: center;
+        color: #FFF;
+        font-size: 13px;
+        span {
+            color: #22A7E9;
+            border-bottom: 2px var(--current-color) dashed;
+            cursor: pointer;
+            &:hover {
+                border-bottom:none;  
+            }
+        }
+    }
+    &__text-wrapper {
+        padding-left: 51px;
+        padding-top: 21px;
+        > * {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 5px;
+        }
+        .card__subtitle {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #666666;
+        }
+        .card__title {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+        
+        }
+        .card__taste {
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+    }
+        
+    &__corner-wrapper {
+        overflow: hidden;
+        position: relative;
+        clip-path: polygon(0 var(--corner-size), var(--corner-size) 0, 100% 0, 100% 100%, 0 100%);
+        z-index: 1000;
+        border-radius: 10px;
+    }
+    &__wrapper {
+    position: relative;
+    height: 480px;
+    width: 100%;
+    border: 4px solid var(--current-color);
+    background-position: bottom;
+    background-repeat: no-repeat;   
+    border-radius: 10px;
+    cursor: pointer;
+    &.hovered {
+        --current-color : var(--hovered-color);
+    }
+    &.selected {
+        --current-color : var(--selected-color);
+        //border: 4px solid #e81313;
+        &.hovered {
+            --current-color : var(--selected-hovered-color);
+        }
+    }
+    &:before, &:after {
+        content: '';
+        inset: 0;
+        position: absolute;
+    }
+    &:before {
+        background-color: var(--current-color);
+        z-index: -2;
+        
+    }
+    &:after {
+        clip-path: polygon(0 calc(var(--corner-size) ), calc(var(--corner-size)) 0, 100% 0, 100% 100%, 0 100%);
+        background-color: #FFF;
+        border-radius: 10px;
+        z-index: -1;
+    }
+    
+    .weight-conteiner {
+        color: #fff;
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        width: 80px;
+        height: 80px;
+        background-color:var(--current-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        .hovered {
+            background-color: var(--hovered-color);
+        }
+        .pack-weight {
+            color: #fff;
+            font-size: 42px;
+            line-height: 22px;
+            margin: 0;
+            padding-top: 10px;
+            +p {
+                //padding-top: 10px;
+                font-size: 21px;
+                margin: 0;
+                padding-top: 5px;
+            }
+        }
+    }
+    
+    
+}
+
+}
