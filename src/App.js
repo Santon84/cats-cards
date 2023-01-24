@@ -27,7 +27,7 @@ useEffect(() => {
         <h2 className='main-header'>Ты сегодня покормил кота?</h2>
         <section className='cards'>
         {catsData?.map(item => {
-          return <Card data={item}/>
+          return <Card key={item.id} data={item}/>
           })
         }
         </section>
