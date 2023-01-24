@@ -56,6 +56,7 @@ h2 {
         border-radius: 10px;
         
     }
+    //card wrapper
     &__wrapper {
     display: flex;
     flex-direction: column;
@@ -137,7 +138,7 @@ h2 {
         }
     }
     .card__text-wrapper {
-        
+        color: inherit;
         padding-left: 51px;
         padding-top: 21px;
         > * {
@@ -162,7 +163,17 @@ h2 {
             line-height: 28px;
             font-weight: 700;
         }
+        .card__portion, .card__bonus
+        {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #666666;
+            max-width: 127px;
+        }
     }
+    //подпись под карточкой
     }
     .undercard-description {
         text-align: center;

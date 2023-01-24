@@ -7,7 +7,6 @@ import Card from './components/Card';
 
 function App() {
 const [catsData, setCatsData] = useState([]);
-const [selectedItems, setSelectedItems] = useState([]);
 
 
 function fetchData()  {
@@ -17,20 +16,7 @@ function fetchData()  {
 
 useEffect(() => {
   fetchData().then(data => setCatsData(data.goods));
-
 },[])
-
-function handleSelect(id) {
-   console.log(id)
-    if (!selectedItems?.find(item => item === id)) {
-    setSelectedItems(prev => [...prev, id]);
-    } else 
-    {
-      setSelectedItems(prev => prev.filter(item => item !== id));
-    }
-
-
-}
 
   return (
     <div className="App">
@@ -41,7 +27,6 @@ function handleSelect(id) {
         <h2 className='main-header'>Ты сегодня покормил кота?</h2>
         <section className='cards'>
         {catsData?.map(item => {
-          // return <Card data={item} handleSelect={handleSelect} selected={selectedItems.find(elem => elem === item.id ) ? true : false}/>
           return <Card data={item}/>
           })
         }
@@ -49,9 +34,6 @@ function handleSelect(id) {
       
       
       </main>
-      <footer>
-
-      </footer>
     </div>
   );
 }

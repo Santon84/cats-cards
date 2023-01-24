@@ -67,6 +67,8 @@ function handleSelect() {
             <p className='card__subtitle'>{isSelected && isHovered ? 'Котэ не одобряет?' : data.subtitle}</p>
             <h3 className='card__title'>{data.title}</h3>
             <p className='card__taste'>{data.taste}</p>
+            <p className="card__portion">{data.portion}</p>
+            <p className="card__bonus">{data.bonus}</p>
         </div>
             <div className='weight-conteiner'>
                 <p className='pack-weight'>{data.weight.split(' ')[0]}</p>
