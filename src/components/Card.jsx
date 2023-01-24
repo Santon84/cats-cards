@@ -1,5 +1,5 @@
 import './Card.scss';
-import React, {memo, useEffect, useState,useMemo} from 'react'
+import React, { useEffect, useState} from 'react'
 
 import Modal from './Modal';
 import classnames from 'classnames';
@@ -12,7 +12,7 @@ const [isSelected, setIsSelected] = useState(false);
 const [isHovered, setIsHovered] = useState(false);
 const [isActive] = useState(JSON.parse(data.available));
 const [message, setMessage] = useState('');
-// const underText = `Чего сидишь? Порадуй котэ, `;
+const underText = {link: `Чего сидишь? Порадуй котэ,  ${<span onClick={e => handleSelect(e.target.parentNode.parentNode.dataset.id)}>купи.</span>}`};
 const linkBuy = <span onClick={e => handleSelect(e.target.parentNode.parentNode.dataset.id)}>купи.</span>;
 const cardClassNames = classnames('card__wrapper',
    {
@@ -30,6 +30,7 @@ useEffect(() => {
     return () => {
         setMessage('');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [isSelected]);
 
 useEffect(() => {
@@ -78,7 +79,7 @@ function handleSelect() {
         <img style={isActive ? {} : {opacity: 0.5}} alt='cat' src={data.image}></img>
         </div>
         </div>
-        <p className='undercard-description'>{isSelected ? data.description : linkBuy }</p>
+        <p className='undercard-description'>{isSelected ? data.description : '' }</p>
         {showModal && message.length>0 && <Modal messageText={message}/>}
     </div>
 
