@@ -168,6 +168,7 @@ h2 {
         content: '';
         inset: 0;
         position: absolute;
+        display: block;
     }
     &:before {
         background: var(--current-color);
@@ -175,6 +176,7 @@ h2 {
         
     }
     &:after {
+
         clip-path: polygon(0 calc(var(--corner-size) ), calc(var(--corner-size)) 0, 100% 0, 100% 100%, 0 100%);
         background: var(--card-bg-color);
         border-radius: 10px;
