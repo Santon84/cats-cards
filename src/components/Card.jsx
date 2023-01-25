@@ -21,6 +21,16 @@ const cardClassNames = classnames('card__wrapper',
     'disabled' : !isActive,
    }) 
 
+const imageStyles = {
+    active: {
+        backgroundImage: 'url('+data.image+')'
+    },
+    inactive: {
+        backgroundImage: 'url('+data.image+')',
+        opacity: 0.5
+    }
+}
+
 useEffect(() => {
     if (isSelected) {
         setMessage(`Товар ${data.title} ${data.taste} выбран`);
@@ -75,8 +85,9 @@ function handleSelect() {
                 <p className='pack-weight'>{data.weight.split(' ')[0]}</p>
                 <p>{data.weight.split(' ')[1]}</p>
             </div>
-        
-        <img style={isActive ? {} : {opacity: 0.5}} alt='cat' src={data.image}></img>
+        <div className='card__image-conteiner' style={isActive ? imageStyles.active : imageStyles.inactive }>
+        {/* <img style={} alt='cat' src={data.image}></img> */}
+        </div>
         </div>
         </div>
         <p className={isActive ? 'undercard-description ' : 'undercard-description disabled'}>{isSelected ? data.description : isActive ? linkBuy : textDisabled } </p>

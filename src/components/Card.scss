@@ -67,7 +67,9 @@ h2 {
     border: 4px solid var(--current-color);
     border-radius: 10px;
     cursor: pointer;
-    
+    img {
+        display: none;
+    }
     &.hovered {
         --current-color : var(--hovered-color);
     }
@@ -138,6 +140,7 @@ h2 {
             }
         }
     }
+    
     .card__text-wrapper {
         color: inherit;
         padding-left: 51px;
@@ -174,10 +177,23 @@ h2 {
             line-height: 16px;
             color: #666666;
             max-width: 127px;
+            
+        }
+        .card__bonus {
+            height: 2rem;
+            overflow: hidden;
         }
     }
-    //подпись под карточкой
+    .card__image-conteiner {
+        background-size: cover;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
     }
+    
+    //конец внутреннего контейнера карточки
+    }
+    //подпись под карточкой
     .undercard-description {
         text-align: center;
         color: #FFF;
