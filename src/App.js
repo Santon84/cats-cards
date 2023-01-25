@@ -10,7 +10,7 @@ const [catsData, setCatsData] = useState([]);
 
 
 function fetchData()  {
-  return fetch('data/data.json').then(res => res.json());
+  return fetch('./data/data.json').then(res => res.json());
 }
 
 
