@@ -20,9 +20,7 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <header>
-
-      </header>
+      
       <main>
         <h1 className='main-header'>Ты сегодня покормил кота?</h1>
         <section className='cards'>
@@ -31,8 +29,6 @@ useEffect(() => {
           })
         }
         </section>
-      
-      
       </main>
     </div>
   );
